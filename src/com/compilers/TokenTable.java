@@ -1,6 +1,7 @@
 package com.compilers;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class TokenTable {
     public enum Identifier {
@@ -57,7 +58,12 @@ public class TokenTable {
         SWITCH_SYM,
         TYPEDEF_SYM,
         VOID_SYM,
-        WHILE_SYM;
+        WHILE_SYM,
+        ERROR_SYM,
+        EXCLAMATION_SYM,
+        BIT_OR_SYM,
+        VARIABLE,
+        NUMBER;
     }
 
     private HashMap<Identifier, Token> tokenMap;
@@ -85,7 +91,9 @@ public class TokenTable {
         tokenMap.put(Identifier.BIGGEREQUAL_SYM, new Token(Identifier.BIGGEREQUAL_SYM, ">=", "black"));
         tokenMap.put(Identifier.LESS_SYM, new Token(Identifier.LESS_SYM, "<", "black"));
         tokenMap.put(Identifier.LESSEQUAL_SYM, new Token(Identifier.LESSEQUAL_SYM, "<=", "black"));
+        tokenMap.put(Identifier.EXCLAMATION_SYM, new Token(Identifier.EXCLAMATION_SYM, "!", "black"));
         tokenMap.put(Identifier.DIFF_SYM, new Token(Identifier.DIFF_SYM, "!=", "black"));
+        tokenMap.put(Identifier.BIT_OR_SYM, new Token(Identifier.BIT_OR_SYM, "|", "black"));
         tokenMap.put(Identifier.OR_SYM, new Token(Identifier.OR_SYM, "||", "black"));
         tokenMap.put(Identifier.AND_SYM, new Token(Identifier.AND_SYM, "&&", "black"));
         tokenMap.put(Identifier.GETADDR_SYM, new Token(Identifier.GETADDR_SYM, "&", "black"));
@@ -118,9 +126,19 @@ public class TokenTable {
         tokenMap.put(Identifier.TYPEDEF_SYM, new Token(Identifier.TYPEDEF_SYM, "typedef", "blue"));
         tokenMap.put(Identifier.VOID_SYM, new Token(Identifier.VOID_SYM, "void", "blue"));
         tokenMap.put(Identifier.WHILE_SYM, new Token(Identifier.WHILE_SYM, "while", "blue"));
+        tokenMap.put(Identifier.ERROR_SYM, new Token(Identifier.ERROR_SYM, "ERROR", "red"));
     }
 
     public Token get(Identifier key){
         return tokenMap.get(key);
+    }
+
+    public Identifier getTokenByText(String text) {
+        for( Map.Entry<Identifier, Token> elem: tokenMap.entrySet()){
+            if( elem.getValue().text.equals(text)) {
+                return elem.getKey();
+            }
+        }
+        return Identifier.ERROR_SYM;
     }
 }

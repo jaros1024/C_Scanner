@@ -18,6 +18,7 @@ public class OutputSaver {
     }
 
     public void saveToken(Token token){
+        System.out.println(token.text);
         if(singleLineComment || multiLineComment){
             if(singleLineComment && token.name == TokenTable.Identifier.NEWLINE_SYM){
                 out.print("</font>");

@@ -45,6 +45,10 @@ public class Scanner {
     public void setState(AbstractState state) {
         this.state = state;
     }
+    public void setState(AbstractState state, char c) {
+        this.state = state;
+        state.nextChar(c);
+    }
 
     public TokenTable getTokenTable() {
         return tokenTable;

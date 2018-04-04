@@ -1,6 +1,7 @@
 package com.compilers.states;
 
 import com.compilers.Scanner;
+import com.compilers.Token;
 import com.compilers.TokenTable;
 
 public abstract class AbstractState {
@@ -12,6 +13,10 @@ public abstract class AbstractState {
 
     protected void passToken(TokenTable.Identifier identifier){
         scanner.passToken(scanner.getTokenTable().get(identifier));
+    }
+
+    protected void passToken(Token token){
+        scanner.passToken(token);
     }
 
     public abstract void nextChar(char c);
