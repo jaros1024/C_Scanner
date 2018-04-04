@@ -63,7 +63,7 @@ public class TokenTable {
         EXCLAMATION_SYM,
         BIT_OR_SYM,
         VARIABLE,
-        NUMBER;
+        NUMBER, FALSE_SYM, TRUE_SYM;
     }
 
     private HashMap<Identifier, Token> tokenMap;
@@ -103,20 +103,23 @@ public class TokenTable {
         tokenMap.put(Identifier.SINGLE_COMM_SYM, new Token(Identifier.SINGLE_COMM_SYM, "//", "green"));
         tokenMap.put(Identifier.BEGIN_COMM_SYM, new Token(Identifier.BEGIN_COMM_SYM, "/*", "green"));
         tokenMap.put(Identifier.END_COMM_SYM, new Token(Identifier.END_COMM_SYM, "*/", "green"));
+        tokenMap.put(Identifier.CHAR_SYM, new Token(Identifier.CHAR_SYM, "char", "orange"));
+        tokenMap.put(Identifier.DOUBLE_SYM, new Token(Identifier.DOUBLE_SYM, "double", "orange"));
+        tokenMap.put(Identifier.FLOAT_SYM, new Token(Identifier.FLOAT_SYM, "float", "orange"));
+        tokenMap.put(Identifier.INT_SYM, new Token(Identifier.INT_SYM, "int", "orange"));
+        tokenMap.put(Identifier.LONG_SYM, new Token(Identifier.LONG_SYM, "long", "orange"));
+        tokenMap.put(Identifier.VOID_SYM, new Token(Identifier.VOID_SYM, "void", "orange"));
+        tokenMap.put(Identifier.TRUE_SYM, new Token(Identifier.TRUE_SYM, "true", "orange"));
+        tokenMap.put(Identifier.FALSE_SYM, new Token(Identifier.FALSE_SYM, "false", "orange"));
         tokenMap.put(Identifier.BREAK_SYM, new Token(Identifier.BREAK_SYM, "break", "blue"));
         tokenMap.put(Identifier.CASE_SYM, new Token(Identifier.CASE_SYM, "case", "blue"));
-        tokenMap.put(Identifier.CHAR_SYM, new Token(Identifier.CHAR_SYM, "char", "blue"));
         tokenMap.put(Identifier.CONST_SYM, new Token(Identifier.CONST_SYM, "const", "blue"));
         tokenMap.put(Identifier.CONTINUE_SYM, new Token(Identifier.CONTINUE_SYM, "continue", "blue"));
         tokenMap.put(Identifier.DEFAULT_SYM, new Token(Identifier.DEFAULT_SYM, "default", "blue"));
         tokenMap.put(Identifier.DO_SYM, new Token(Identifier.DO_SYM, "do", "blue"));
-        tokenMap.put(Identifier.DOUBLE_SYM, new Token(Identifier.DOUBLE_SYM, "double", "blue"));
         tokenMap.put(Identifier.ELSE_SYM, new Token(Identifier.ELSE_SYM, "else", "blue"));
-        tokenMap.put(Identifier.FLOAT_SYM, new Token(Identifier.FLOAT_SYM, "float", "blue"));
         tokenMap.put(Identifier.FOR_SYM, new Token(Identifier.FOR_SYM, "for", "blue"));
         tokenMap.put(Identifier.IF_SYM, new Token(Identifier.IF_SYM, "if", "blue"));
-        tokenMap.put(Identifier.INT_SYM, new Token(Identifier.INT_SYM, "int", "blue"));
-        tokenMap.put(Identifier.LONG_SYM, new Token(Identifier.LONG_SYM, "long", "blue"));
         tokenMap.put(Identifier.RETURN_SYM, new Token(Identifier.RETURN_SYM, "return", "blue"));
         tokenMap.put(Identifier.SHORT_SYM, new Token(Identifier.SHORT_SYM, "short", "blue"));
         tokenMap.put(Identifier.SIZEOF_SYM, new Token(Identifier.SIZEOF_SYM, "sizeof", "blue"));
@@ -124,7 +127,6 @@ public class TokenTable {
         tokenMap.put(Identifier.STRUCT_SYM, new Token(Identifier.STRUCT_SYM, "struct", "blue"));
         tokenMap.put(Identifier.SWITCH_SYM, new Token(Identifier.SWITCH_SYM, "switch", "blue"));
         tokenMap.put(Identifier.TYPEDEF_SYM, new Token(Identifier.TYPEDEF_SYM, "typedef", "blue"));
-        tokenMap.put(Identifier.VOID_SYM, new Token(Identifier.VOID_SYM, "void", "blue"));
         tokenMap.put(Identifier.WHILE_SYM, new Token(Identifier.WHILE_SYM, "while", "blue"));
         tokenMap.put(Identifier.ERROR_SYM, new Token(Identifier.ERROR_SYM, "ERROR", "red"));
     }
