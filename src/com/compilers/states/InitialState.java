@@ -24,7 +24,8 @@ public class InitialState extends AbstractState {
         else if(c == ';'){
             passToken(TokenTable.Identifier.SEMICOLON_SYM);
         }
-        else if(c == '\n' || c == '\r'){
+        else if(c == '\r'){  }
+        else if(c == '\n'){
             passToken(TokenTable.Identifier.NEWLINE_SYM);
         }
         else if(c == '{'){

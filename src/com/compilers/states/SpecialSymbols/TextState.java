@@ -20,7 +20,7 @@ public class TextState extends AbstractState {
         if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')) {
             text = text + c;
         }
-        else if(c == ' ' || c == ';'){
+        else{
             TokenTable.Identifier identifier = scanner.getTokenTable().getTokenByText(text);
             if (identifier == TokenTable.Identifier.ERROR_SYM){
                 passToken(new Token(TokenTable.Identifier.VARIABLE, text, "grey"));
@@ -29,10 +29,6 @@ public class TextState extends AbstractState {
                 passToken(identifier);
             }
             scanner.setState(new InitialState(scanner), c);
-        }
-        else{
-            passToken(TokenTable.Identifier.ERROR_SYM);
-            scanner.setState(new InitialState(scanner));
         }
     }
 }
