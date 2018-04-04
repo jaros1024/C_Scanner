@@ -20,6 +20,7 @@ public class IntegerNumberState extends AbstractState {
             text = text + c;
         }
         else if(c == '.'){
+            text = text + c;
             scanner.setState(new FloatingNumberState(scanner, text));
         }
         else{
