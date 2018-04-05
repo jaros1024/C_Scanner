@@ -31,6 +31,9 @@ public class OutputSaver {
                 multiLineComment = false;
             }
             else {
+                if (token.name == TokenTable.Identifier.NEWLINE_SYM) {
+                    out.println("<br/>");
+                }
                 out.print(token.text);
             }
         }
